@@ -1,0 +1,20 @@
+<import src="../../wxParse/wxParse.wxml"/> 
+<view wx:if="{{blogData}}">
+    <view class="book-meta">
+        <view class="meta-info">
+            <text class="book-title">{{blogData.title_plain}}</text>
+            <text class="other-meta">作者：{{blogData.author.name}}</text>
+            <text class="other-meta">日期：{{blogData.modified}}</text>
+       </view>
+    </view>
+
+    <view class="book-intro">
+        <view class='intro-content'>  
+          <template is="wxParse" data="{{wxParseData:blogcontent.nodes}}"/>  
+       </view> 
+    </view>
+</view>
+
+<loading hidden="{{loadidngHidden}}">
+    加载中...
+</loading>
