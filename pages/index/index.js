@@ -5,6 +5,7 @@ const app = getApp()
 Page({
   data: {
     motto: '技术就是生产力',
+    site: 'https://helight.info',
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo')
