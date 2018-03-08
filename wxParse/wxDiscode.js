@@ -36,7 +36,7 @@ function strNumDiscode(str){
     str = str.replace(/&oplus;/g, '⊕');
     str = str.replace(/&otimes;/g, '⊗');
     str = str.replace(/&perp;/g, '⊥');
-    str = str.replace(/&sdot;/g, '⋅');
+    str = str.replace(/&sdot;/g, '⋅');    
     return str;
 }
 
@@ -104,13 +104,25 @@ function strGreeceDiscode(str){
 function strcharacterDiscode(str){
     // 加入常用解析
     str = str.replace(/&nbsp;/g, ' ');
-    str = str.replace(/&quot;/g, '"');
+    str = str.replace(/&quot;/g, "'");
     str = str.replace(/&amp;/g, '&');
     // str = str.replace(/&lt;/g, '‹');
     // str = str.replace(/&gt;/g, '›');
 
     str = str.replace(/&lt;/g, '<');
     str = str.replace(/&gt;/g, '>');
+    str = str.replace(/&#8226;/g, '•');
+    str = str.replace(/&/g, '&');
+    str = str.replace(/&#8221;/g, '"');
+    str = str.replace(/&#8216;/g, '\'');
+    str = str.replace(/&#8217;/g, '\'');
+    str = str.replace(/&#x27;/g, '\'');
+    str = str.replace(/&#8230;/g, '...');
+    str = str.replace(/&#8220;/g, '"');
+    str = str.replace(/&#038;/g, '&');
+    
+   
+
 
     return str;
 }
@@ -170,7 +182,7 @@ function strOtherDiscode(str){
     str = str.replace(/&hearts;/g, '♥');
 
     str = str.replace(/&diams;/g, '♦');
-
+    str = str.replace(/&#39;/g, '\'');
     return str;
 }
 
@@ -178,7 +190,7 @@ function strMoreDiscode(str){
     str = str.replace(/\r\n/g,"");  
     str = str.replace(/\n/g,"");
 
-    str = str.replace(/code/g,"wxxxcode-style");
+    //str = str.replace(/code/g,"wxxxcode-style");
     return str;
 }
 
@@ -187,7 +199,7 @@ function strDiscode(str){
     str = strGreeceDiscode(str);
     str = strcharacterDiscode(str);
     str = strOtherDiscode(str);
-    str = strMoreDiscode(str);
+    //str = strMoreDiscode(str);
     return str;
 }
 function urlToHttpUrl(url,rep){
